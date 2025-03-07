@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('gender', function (Blueprint $table) {
             $table->id();
             $table->string('superheroes_id') ->contrained('superheroes'); 
-            $table->string('male', 20);
-            $table->string('female', 20);
+            $table->string('name');
             $table->timestamps();
         });
     }
