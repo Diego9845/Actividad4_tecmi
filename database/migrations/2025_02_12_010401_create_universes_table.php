@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('universes', function (Blueprint $table) {
             $table->id();
-            $table->string('id_name', 50) ->default('the default value');
             $table->string('name',50);
-            $table->string('real_name',50);
             $table->timestamps();
         });
     }

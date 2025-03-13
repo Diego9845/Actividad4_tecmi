@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('superheroes', function (Blueprint $table) {
             $table->id();
-            $table->string('universe_id') ->contrained('universe');
-            $table->string('name');
-            $table->string('creted_at');
-            $table->string('updated');
+            $table->unsignedBigInteger('universe_id');
+            $table->foreign('universe_id') ->references('id')->on('universe');
+            $table->unsignedBigInteger('gender_id');
+            $table->foreign('gender_id') ->references('id')->on('gender');
+            $table->string('name', 50 );
+            $table->string('real_name',50);
+            $table->string('picture');
             $table->timestamps();
         });
     }

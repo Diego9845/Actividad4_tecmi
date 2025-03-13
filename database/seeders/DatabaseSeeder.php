@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
             UniverseSeeder::class,
         ]);
 
-        User::factory()->create([
+      /* User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-
+*/
         SuperHero::factory(10)->create();
     }
 }
