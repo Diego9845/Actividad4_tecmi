@@ -33,6 +33,9 @@ class SuperHeroController extends Controller
         SuperHero::create([
             'gender_id' => $request->gender_id,
             'real_name' => $request->real_name,
+            'universe_id' => 1,
+            'name' => 'SpiderMan',
+            'picture' => ''
             
 
         ]);
