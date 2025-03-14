@@ -8,13 +8,17 @@
 <body>
     <h1>Create Superhero</h1>
 
-    <form action="#" method="post">
+    <form action="{{ route('superheroes.store') }}" method="post">
+        @csrf
         <label for="">Gender</label>
         <select name="gender_id">
-            <option value="1">Name</option>
+            @foreach ($genders as $gender )
+            <option value="{{ $gender->id }}"> {{ $gender->name }}</option>
+            @endforeach
+            
         </select>
 
-        <br>
+        <br><br>
 
         <input type="submit" value="Create">
     </form>
