@@ -10,4 +10,9 @@ class SuperHero extends Model
     use HasFactory;
 
     protected $table = 'superhero';
+
+    protected $fillanle = [
+        'gender_id',
+        'real_name'
+    ];
 }

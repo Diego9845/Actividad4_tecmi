@@ -20,6 +20,11 @@
 
         <br><br>
 
+        <label for="">Real Name</label>
+        <input type="text" name="real_name">
+
+        <br><br>
+
         <input type="submit" value="Create">
     </form>
 </body>

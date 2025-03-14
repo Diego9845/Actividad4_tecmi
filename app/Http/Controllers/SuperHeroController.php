@@ -30,7 +30,14 @@ class SuperHeroController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        SuperHero::create([
+            'gender_id' => $request->gender_id,
+            'real_name' => $request->real_name,
+            
+
+        ]);
+
+        return to_route('superheroes.index');
     }
 
     /**
