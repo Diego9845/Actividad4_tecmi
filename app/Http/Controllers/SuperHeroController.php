@@ -48,8 +48,8 @@ class SuperHeroController extends Controller
      */
     public function show(string $id)
     {
-        $superhero = SuperHero::find(101);
-        dd($superhero);
+        $superhero = SuperHero::find($id);
+        return view('superheroes.show', compact('superhero'));
     }
 
     /**
