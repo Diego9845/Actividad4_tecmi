@@ -13,6 +13,9 @@ class SuperHero extends Model
 
     protected $fillanle = [
         'gender_id',
-        'real_name'
+        'real_name',
+        'universe_id',
+        'name',
+        'picture'
     ];
 }
