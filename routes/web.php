@@ -1,29 +1,20 @@
 <?php
 
-use App\Http\Controllers\UniverseController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Universe;
-use App\Http\Controllers\GenderController;
-use App\Http\Controllers\SuperHeroController;
-
 
 Route::get('/', function () {
-    echo 'Hello guys! this is my first laravel aplicatioon.';
-    //echo '<pre>';
-    //print_r(Universe::all());
-
-
-
-    dump(Universe::all());
-    
-    //SELECT * FROM universes
-    //return view('welcome');
+    return view('welcome');
 });
 
-Route::get('/gender',[GenderController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-//Route::get('/universes',[UniverseController::class, 'index']);
-//Route::get('/create-universes',[UniverseController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::resource('universes', UniverseController::class);
-Route::resource('superheroes', SuperHeroController::class);
+require __DIR__.'/auth.php';
