@@ -174,3 +174,87 @@
         </div>
     </body>
 </html>
+
+@extends('layouts.app')
+
+@section('content')
+<main class="container mx-auto py-8">
+    <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+        <!-- Sección 1: Registro de productos -->
+        <a href="{{ url('/products') }}"
+            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
+            <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
+                📦
+            </div>
+            <div class="pt-3 sm:pt-5">
+                <h2 class="text-xl font-semibold text-black dark:text-white">Registro de productos</h2>
+                <p class="mt-4 text-sm/relaxed">
+                    Administra todos los productos, especificaciones y categorías en un solo lugar.
+                </p>
+            </div>
+        </a>
+
+        <!-- Sección 2: Gestión de stock -->
+        <a href="{{ url('/stock') }}"
+            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-md ring-1 ring-white/[0.05] transition hover:ring-black/20 focus-visible:ring-[#FF2D20] dark:bg-zinc-900 dark:ring-zinc-800">
+            <div class="flex size-12 items-center justify-center rounded-full bg-[#FF2D20]/10">
+                📊
+            </div>
+            <div class="pt-3">
+                <h2 class="text-xl font-semibold text-black dark:text-white">Gestión de stock</h2>
+                <p class="mt-4 text-sm/relaxed">Visualiza niveles de inventario y controla entradas y salidas.</p>
+            </div>
+        </a>
+
+        <!-- Sección 3: Control de almacenes -->
+        <a href="{{ url('/warehouses') }}"
+            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-md ring-1 ring-white/[0.05] transition hover:ring-black/20 focus-visible:ring-[#FF2D20] dark:bg-zinc-900 dark:ring-zinc-800">
+            <div class="flex size-12 items-center justify-center rounded-full bg-[#FF2D20]/10">
+                🏢
+            </div>
+            <div class="pt-3">
+                <h2 class="text-xl font-semibold text-black dark:text-white">Control de almacenes</h2>
+                <p class="mt-4 text-sm/relaxed">Gestiona múltiples almacenes y sus ubicaciones.</p>
+            </div>
+        </a>
+
+        <!-- Sección 4: Alertas de reposición -->
+        <a href="{{ url('/alerts') }}"
+            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-md ring-1 ring-white/[0.05] transition hover:ring-black/20 focus-visible:ring-[#FF2D20] dark:bg-zinc-900 dark:ring-zinc-800">
+            <div class="flex size-12 items-center justify-center rounded-full bg-[#FF2D20]/10">
+                🚨
+            </div>
+            <div class="pt-3">
+                <h2 class="text-xl font-semibold text-black dark:text-white">Alertas de reposición</h2>
+                <p class="mt-4 text-sm/relaxed">Recibe notificaciones cuando un producto alcance el mínimo.</p>
+            </div>
+        </a>
+
+        <!-- Sección 5: Reportes -->
+        <a href="{{ url('/reports') }}"
+            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-md ring-1 ring-white/[0.05] transition hover:ring-black/20 focus-visible:ring-[#FF2D20] dark:bg-zinc-900 dark:ring-zinc-800">
+            <div class="flex size-12 items-center justify-center rounded-full bg-[#FF2D20]/10">
+                📈
+            </div>
+            <div class="pt-3">
+                <h2 class="text-xl font-semibold text-black dark:text-white">Reportes</h2>
+                <p class="mt-4 text-sm/relaxed">Genera reportes por almacén, producto o fechas específicas.</p>
+            </div>
+        </a>
+
+        <!-- Sección 6: Roles y permisos -->
+        <a href="{{ url('/roles') }}"
+            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-md ring-1 ring-white/[0.05] transition hover:ring-black/20 focus-visible:ring-[#FF2D20] dark:bg-zinc-900 dark:ring-zinc-800">
+            <div class="flex size-12 items-center justify-center rounded-full bg-[#FF2D20]/10">
+                👤
+            </div>
+            <div class="pt-3">
+                <h2 class="text-xl font-semibold text-black dark:text-white">Roles y permisos</h2>
+                <p class="mt-4 text-sm/relaxed">Define permisos para usuarios según sus responsabilidades.</p>
+            </div>
+        </a>
+
+    </div>
+</main>
+@endsection

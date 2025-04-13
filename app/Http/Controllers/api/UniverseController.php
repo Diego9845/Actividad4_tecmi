@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Universe;
 use Illuminate\Http\Request;
 
-class GenderControllerid extends Controller
+class UniverseController extends Controller
 {
     public function index(){
         $universes = Universe::all();
@@ -12,7 +12,7 @@ class GenderControllerid extends Controller
     }
 
     public function show($name){
-        $universe = Universe::wehe('name', $name) -> with('superheroes') -> get();
+        $universe = Universe::where('name', $name) -> with('superheroes') -> get();
         return response()-> json($universe);
     }
 }
